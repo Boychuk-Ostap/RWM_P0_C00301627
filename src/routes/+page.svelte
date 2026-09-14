@@ -1,8 +1,8 @@
 <script lang="ts">
-    import { cubes } from '$lib/filters';
-    let raw = $state('1 3 5 7 9 999');
+    import { DecrementIfLessThanFirst } from '$lib/filters';
+    let raw = $state('4 2 8 3 9 4 10 5 11 6 1');
     let input = $derived(raw.trim().split(/\s+/).filter(Boolean).map(Number));
-    let output = $derived(cubes(input));
+    let output = $derived(DecrementIfLessThanFirst(input));
 </script>
 
 <h1> Sequence filter demo</h1>
